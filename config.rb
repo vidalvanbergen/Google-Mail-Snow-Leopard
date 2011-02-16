@@ -6,10 +6,10 @@
 # Set this to the root of your project when deployed:
 http_path = "/"
 
-css_dir = "Google Mail Snow Leopard.safariextension"
+css_dir = "Gmail Snow Leopard.safariextension"
 sass_dir = ""
 # fonts_dir = "media/fonts"
-images_dir = "Google Mail Snow Leopard.safariextension/images"
+images_dir = "Gmail Snow Leopard.safariextension/images"
 # javascripts_dir = "media/js"
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
