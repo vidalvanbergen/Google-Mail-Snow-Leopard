@@ -5,9 +5,9 @@
 	<key>Author</key>
 	<string>Vidal van Bergen</string>
 	<key>CFBundleDisplayName</key>
-	<string>Google Mail Snow Leopard</string>
+	<string>Gmail Snow Leopard</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.vidalvbergen.googlemailsnowleopard</string>
+	<string>com.vidalvbergen.gmailsnowleopard</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
