@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>Vidal van Bergen</string>
+	<key>CFBundleDisplayName</key>
+	<string>Google Mail Snow Leopard</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.vidalvbergen.googlemailsnowleopard</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict/>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict/>
+		<key>Stylesheets</key>
+		<array>
+			<string>GM MOSX Snow Leopard.css</string>
+		</array>
+		<key>Whitelist</key>
+		<array>
+			<string>http://mail.google.com/mail/*</string>
+			<string>https://mail.google.com/mail/*</string>
+			<string>http://mail.google.it/mail/*</string>
+			<string>https://mail.google.it/mail/*</string>
+			<string>http://mail.google.ca/mail/*</string>
+			<string>https://mail.google.ca/mail/*</string>
+			<string>http://mail.google.fr/mail/*</string>
+			<string>https://mail.google.fr/mail/*</string>
+			<string>http://mail.google.co.uk/mail/*</string>
+			<string>https://mail.google.co.uk/mail/*</string>
+			<string>http://mail.google.nl/mail/*</string>
+			<string>https://mail.google.nl/mail/*</string>
+			<string>http://mail.google.pl/mail/*</string>
+			<string>https://mail.google.pl/mail/*</string>
+			<string>http://mail.google.co.jp/mail/*</string>
+			<string>https://mail.google.co.jp/mail/*</string>
+			<string>http://mail.google.de/mail/*</string>
+			<string>https://mail.google.de/mail/*</string>
+			<string>http://mail.google.se/mail/*</string>
+			<string>https://mail.google.se/mail/*</string>
+			<string>http://mail.google.be/mail/*</string>
+			<string>https://mail.google.be/mail/*</string>
+			<string>http://mail.google.com.au/mail/*</string>
+			<string>https://mail.google.com.au/mail/*</string>
+			<string>http://mail.google.dk/mail/*</string>
+			<string>https://mail.google.dk/mail/*</string>
+			<string>http://mail.google.es/mail/*</string>
+			<string>https://mail.google.es/mail/*</string>
+			<string>http://mail.google.co.kr/mail/*</string>
+			<string>https://mail.google.co.kr/mail/*</string>
+			<string>http://mail.google.com.tw/mail/*</string>
+			<string>https://mail.google.com.tw/mail/*</string>
+			<string>http://mail.google.com.mx/mail/*</string>
+			<string>https://mail.google.com.mx/mail/*</string>
+			<string>http://mail.google.ru/mail/*</string>
+			<string>https://mail.google.ru/mail/*</string>
+			<string>http://mail.google.hu/mail/*</string>
+			<string>https://mail.google.hu/mail/*</string>
+			<string>http://mail.google.co.nz/mail/*</string>
+			<string>https://mail.google.co.nz/mail/*</string>
+			<string>http://mail.google.ch/mail/*</string>
+			<string>https://mail.google.ch/mail/*</string>
+			<string>http://mail.google.ie/mail/*</string>
+			<string>https://mail.google.ie/mail/*</string>
+			<string>http://mail.google.com.br/mail/*</string>
+			<string>https://mail.google.com.br/mail/*</string>
+		</array>
+	</dict>
+	<key>Description</key>
+	<string>Transform Google Mail™ to fit in more with Snow Leopard.</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://mariusth.channelwood.org/SafariExtensions/update.plist</string>
+	<key>Website</key>
+	<string>http://mariusth.channelwood.org/SafariExtensions/</string>
+</dict>
+</plist>

@@ -1,0 +1,488 @@
+/* ==UserScript==
+// @name          Gmail: Mac OS X Snow Leopard
+// @namespace     http://userstyles.org
+// @description    Gmail powered by Mac OS X.
+// @author        m.mike kondo
+// @homepage      http://userstyles.org/styles/17900
+// @include       https://mail.google.com/mail*
+// @include       http://mail.google.com/mail*
+
+@import                               "compass"
+@import                               "mixins"
+$experimental-support-for-mozilla:    false
+$experimental-support-for-opera:      false
+$experimental-support-for-microsoft:  false
+$experimental-support-for-khtml:      false
+
+=modal_dialog-hd
+  +linear-gradient( color-stops( hsl(0, 0%, 35%), hsl(0, 0%, 35%) 50%, hsl(0, 0%, 25%) 50%, hsl(0, 0%, 25%)  ) )
+
+=button-bg
+  +linear-gradient( color-stops( hsl(0, 0%, 35%), hsl(0, 0%, 35%) 50%, hsl(0, 0%, 25%) 50%, hsl(0, 0%, 25%)  ) )
+  &:active
+    +linear-gradient( color-stops( hsl(0, 0%, 30%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 20%) 50%, hsl(0, 0%, 20%)  ) )
+
+$modal_dialog-bg: hsla(0, 0%, 0%, .85)
+
+#loading
+  background: white url("images/Aurora.jpg") bottom center no-repeat !important
+  background-size: 100%
+  .cmsg:first-child
+    position: fixed !important
+    width: 470px !important
+    height: 250px !important
+    top: 50% !important
+    left: 50% !important
+    margin-top: -185px !important
+    margin-left: -235px !important
+    padding-top: 120px !important
+    background: rgba(232, 232, 232, 0.9) url("images/logo1.png") 165px 50px no-repeat !important
+    text-align: center !important
+    -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6) !important
+  .msg
+    background: rgba(200, 200, 200, 0.6) !important
+    width: 410px !important
+    height: 75px !important
+    margin-top: 50px !important
+    margin-left: 30px !important
+    padding-top: 25px !important
+    font-family: "Lucida Grande", sans-serif !important
+    font-size: 14px !important
+    font-weight: normal !important
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.7) !important
+    -webkit-border-radius: 5px !important
+    -webkit-border-radius: 5px !important
+  .lpb
+    background: transparent url("images/progressbar-empty.png") repeat-x  !important
+    height: 16px !important
+    margin-top: -40px !important
+    margin-left: 85px !important
+    border: none !important
+  #lpt
+    background: transparent url("images/progressbar-loading.gif") repeat-x !important
+  #lpt
+    margin-top: -1px !important
+
+
+#stb
+  &.msgb
+    background: rgba(0, 0, 0, 0.6) !important
+    bottom: 0 !important
+    padding: 6px 20px 4px !important
+    font-size: 10px !important
+    color: #fff !important
+    -webkit-border-top-left-radius: 5px !important
+    -webkit-border-radius-topleft: 5px !important
+    a
+      color: #fff !important
+
+
+#loadingError
+  &.cmsg
+    position: fixed !important
+    background: rgba(232, 232, 232, 0.9) !important
+    top: 50% !important
+    left: 50% !important
+    margin-top: -13px !important
+    margin-left: -182px !important
+    padding: 0 30px !important
+    -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6) !important
+    -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6) !important
+    p
+      font-size: 12px !important
+      margin-top: 20px !important
+      margin-bottom: 0px !important
+    div
+      font-size: 12px !important
+
+
+div[class*="vI8oZc"] + .nH > .nH > .aC > .nH > .nH > .no
+  z-index: 10 !important
+  position: fixed !important
+  // background: transparent url(images/header-gradient.png) repeat-x !important
+  +linear-gradient(color-stops(hsl(0, 0%, 78%), hsl(0, 0%, 65%)))
+  top: 0 !important
+  width: 100% !important
+  height: 28px !important
+  border-bottom: 1px solid #404040 !important
+  & > .nH.nn:first-child
+    display: none !important
+  & .a9.Rgky9
+    display: none !important
+  & table
+    position: fixed
+    right: 128px
+    top: 0
+    height: 27px !important
+    margin: 0 !important
+    & input[type='text']
+      // Search Field
+      padding: 2px 4px 2px 20px !important
+      margin: 0px !important
+      margin-top: 1px !important
+      margin-right: 8px !important
+      border-radius: 25px
+      width: 250px !important
+      border: 0 none !important
+      -webkit-box-shadow: inset 0px 1px 2px black
+      &:focus
+        -webkit-box-shadow: inset 0px 1px 2px black, 0 0 2px 2px hsl(212, 71.0407%, 56.6667%)
+    & [role='button']
+      display: none !important
+    & .J-Zh-I-Js-Zq[role='button']
+      // Search Button
+      border: 0 none !important
+      position: absolute !important
+      left: 0 !important
+      top: 0  !important
+      margin: 0 !important
+      padding: 0 !important
+      overflow: hidden !important
+      text-indent: -9999999px
+      height: 16px !important
+      width: 16px !important
+      margin-top: 6px !important
+      margin-left: 3px !important
+      background: transparent image-url('icons/search.png') no-repeat center center !important
+      display: block !important
+      z-index: 30
+      cursor: pointer !important
+    & .bN.bR
+      text-decoration: none !important
+      margin-top: 8px !important
+      margin-left: 8px !important
+    & [role='link']
+      color: black
+      text-shadow: #ddd 0 1px !important
+      border: 0 none !important
+      &:hover
+        border-bottom: 1px solid black !important
+
+html.cQ
+  overflow: auto !important
+
+#gbar
+  z-index: 20 !important
+  position: fixed !important
+  top: 0
+  line-height: 27px
+  height: 27px !important
+  padding-right: 0px !important
+  padding-top: 0px !important
+  text-shadow: #ddd 0 1px !important
+  a.gb1, a.gb3, b
+    // outline: 1px solid red
+    display: inline-block !important
+    width: 27px !important
+    height: 23px !important
+    float: left
+    overflow: hidden !important
+    margin: 3px 0 0 0 !important
+    text-indent: -999999px
+    background: transparent image-url('gbar-apps.png') no-repeat left top
+  b
+    width: 28px !important
+    background-position: bottom left
+  & a
+    &.gb1[href*='calendar']
+      background-position: top -28px
+      &:active
+        background-position: bottom -28px
+    &.gb1[href*='docs']
+      background-position: top -55px
+      &:active
+        background-position: bottom -55px
+    &.gb1[href*='reader']
+      background-position: top -82px
+      &:active
+        background-position: bottom -82px
+    &.gb1[href*='web']
+      background-position: top -109px
+      &:active
+        background-position: bottom -109px
+    &.gb1[href*='picasaweb']
+      background-position: top -136px
+      &:active
+        background-position: bottom -136px
+    &.gb3
+      background-position: top -163px
+      &:active
+        background-position: bottom -163px
+
+#guser
+  z-index: 20 !important
+  position: fixed
+  padding: 0 !important
+  right: 8px
+  top: 3px
+  span[role='link'], nobr > a.e
+    display: inline-block !important
+    height: 23px !important
+    width: 27px !important
+    overflow: hidden !important
+    margin: 0 !important
+    padding: 0 !important
+    text-indent: 99999px !important
+    background: transparent image-url('guser.png') no-repeat top left
+  span.e
+    // Labs
+    width: 28px !important
+    &:active
+      background-position: left bottom
+  nobr > a[href*='settings']
+    // Settings
+    background-position: top -28px
+    &:active
+      background-position: bottom -28px
+  span.e:nth-child(1)
+    // Help
+    background-position: top -55px
+    width: 27px !important
+    &:active
+      background-position: bottom -55px
+  nobr > a[href*='logout']
+    // Logout
+    background-position: top -82px
+    &:active
+      background-position: bottom -82px
+
+  & > nobr > span
+    &:nth-child(2),
+    &:nth-child(6),
+    &:nth-child(8),
+    &:nth-child(10)
+      display: none
+  .bA
+    position: fixed !important
+    right: 515px !important
+    top: 6px
+    > span > a
+      color: black !important
+      text-shadow: #ddd 0 1px !important
+    &:hover
+      border-bottom: 1px solid black
+    u
+      text-decoration: none !important
+
+#gbi, .bA .J-M
+  background: hsla(0, 0%, 0%, .8) !important
+  text-shadow: none !important
+  border: 2px solid white !important
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 8px 0px
+  border-radius: 8px
+  line-height: 18px
+  padding: 5px 0 !important
+  a
+    color: white !important
+    padding: 2px 18px !important
+    &:hover
+      background: none !important
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, hsl(215, 72%, 62%)), color-stop(100%, hsl(219, 78%, 41%))) !important
+      background-image: linear-gradient(top, hsl(215, 72.1650%, 61.9608%) 0%, hsl(219, 78%, 41%) 100%) !important
+
+// .bA .J-N .e, .bA .J-N .Qu
+  color: white !important
+  padding-left: 18px !important
+  padding-right: 18px !important
+
+// .bA .J-N .Qu
+  color: hsl(0, 0%, 75%) !important
+  font-weight: normal !important
+
+#gbs, #gbm
+  background: transparent !important
+
+
+body
+  // background: hsla(60, 100%, 90%, 1)
+  // height: 100%
+  // +linear-gradient(color-stops(hsl(208, 21.7391%, 86.4706%) 20%, white 20%, white), left)
+  background: transparent image-url('sidebarbg.png') repeat-y top left
+  
+  
+
+.cP > div > div.nH > div.nH > div.nH > div.no
+  // margin-top: 27px !important
+  // z-index: 99
+  position: absolute
+  float: none !important
+  top: 32px
+  width: 100%
+  z-index: 1 !important
+  & > .nH.nn:first-child
+    border-right: 1px solid #8B8B8B
+    width: 200px !important
+    // height: 100% !important
+    // background: hsl(208, 22%, 87%) !important
+    z-index: 1 !important
+  & > .nH.nn:last-child
+    background: white !important
+    position: absolute !important
+    left: 201px
+    top: 0
+    right: 0
+    bottom: 0
+    width: auto !important
+    z-index: 1 !important
+    .diLZtc > .nH > .nH:first-child
+      display: none !important
+    .nH.q0CeU
+      & > .pi
+        display: none !important
+      .l.n
+        // outline: 1px solid red
+        margin: 0 !important
+
+.cP > div > div.nH > div.nH > div.nH > div.no
+  & > .nH.nn:first-child
+    & > div.nH div.z9
+      // Mail
+      margin: 2px 0 !important
+      padding-left: 0px !important
+      & > span.is
+        padding-left: 43px !important
+        background: transparent image-url('icons/outbox.png') no-repeat 23px 0px
+        // outline: 1px solid red
+        // margin: 0 !important
+        // line-height: 22px !important
+    & > div.nH div.z9:last-child
+      & > span.is
+        background-image: image-url('icons/contacts.png')
+    & > div.nH div.z9.z8
+      background: transparent image-url('sidebar-selected-gradient.png') repeat-x center center !important
+      color: white !important
+    & > div.nH div.T4
+      padding-left: 0px !important
+      & div.T3
+        margin: 2px 0 !important
+        padding-left: 43px !important
+        background: transparent image-url('icons/tasks.png') no-repeat 23px 2px !important
+        &:hover
+          background-color: #EEF2FF !important
+//
+  .cP > div > div.nH > div.nH > div.nH > div.no
+  & > .nH.nn:first-child
+    // New item button
+    div.n3
+      position: relative !important
+      padding-bottom: 24px
+    div.z0,
+    div.MX
+      // Sidebar actionbar background
+      // position: absolute !important
+      // bottom: 0
+      height: 23px !important
+      padding: 0 !important
+      width: 100%
+      background: transparent image-url('whitebg.png') repeat-x top left
+      border-top: 1px solid hsl(0, 0%, 80%)
+      -webkit-box-shadow: inset 0 1px 0 white
+    div.J-Zh-I.J-J5-Ji.L3,
+    div.J-J5-Ji.J-Zh-I
+      // Add subscription button
+      background: transparent image-url('AddsubscriptionButton.png') no-repeat center center !important
+      height: 23px
+      left: 0px !important
+      overflow: hidden
+      padding: 0 !important
+      position: absolute !important
+      text-indent: -999999px
+      top: 0 !important
+      width: 28px
+      border: 0 none !important
+      border-right: 1px solid hsl(0, 0%, 80%) !important
+      border-radius: 0 !important
+    div.n6
+      margin-top: -24px
+      z-index: 8
+      span.J-Ke.n4.toxOdd
+        // More button
+        position: absolute !important
+        top: 0 !important
+        left: 29px !important
+        overflow: hidden
+        padding: 0 !important
+        height: 23px
+        width: 28px
+        border-right: 1px solid hsl(0, 0%, 80%)
+        text-indent: -999999px
+        background: transparent image-url('gear2.png') no-repeat center center
+
+body > div > div.nH > div.nH > div.aC > div.nH > div.nH
+  // Searchbox Header
+  & > div.no > div.nH.nn > div.nH > div.nH.aK,
+  & > div.no > div.nH.nn > div.nH > div.nH.aJ
+    // outline: 1px solid red
+    width: 800px !important
+    margin: 68px auto 0 !important
+    position: relative !important
+    left: 86px
+    & div.pi
+      display: none !important
+    & > div.nH
+      & div.l.m
+        background: $modal_dialog-bg !important
+        +modal_dialog-hd
+        margin: 0 !important
+        +border-top-radius(5px)
+        border-top: 1px solid gray
+      & div.l.m > div.l.n
+        background: transparent !important
+      & div.l.m > div.l.n > div.k
+        background: transparent !important
+        // margin: 0 !important
+        // padding: 10px 0 !important
+        font-size: 12px !important
+        height: 21px !important
+        & > div.diLZtc > div.nH > span.aI
+          color: white !important
+          line-height: 22px
+          margin-left: 8px !important
+        & > div.diLZtc > div.nH > span.a5
+          height: 30px !important
+          width: 30px !important
+          overflow: hidden !important
+          background: transparent url('images/closebox.png') no-repeat center center !important
+          text-indent: -999999px !important
+          top: -10px !important
+          &:active
+            background-image: url('images/closebox_pressed.png') !important
+
+  // Searchbox Content
+  & > div.nH
+    & div.pi
+      display: none
+    & > div.nH
+      position: relative !important
+      width: 800px !important
+      margin: 132px auto !important
+      z-index: 50 !important
+      & div.l.m
+        background: $modal_dialog-bg !important
+        margin: 0 !important
+        // border-top: 1px dashed gray
+        +box-shadow(hsla(0, 0%, 0%, .4), 0px, 5px, 10px, 5px)
+        +border-bottom-radius(5px)
+      & div.l.m > div.l.n
+        background: transparent !important
+      & div.l.m > div.l.n > div.k
+        background: transparent !important
+        margin: 0 !important
+        padding: 10px 0 !important
+        color: white !important
+      & span.e
+        color: gray !important
+    & button
+      // outline: 1px solid red !important
+      background-color: $modal_dialog-bg !important
+      +button-bg
+      color: white !important
+      padding: 4px 12px !important
+      border: 1px solid black !important
+      +border-radius(16px)
+      -webkit-box-shadow: 0 1px 0 hsla(0, 0%, 100%, .2), inset 0 2px 2px hsla(0, 0%, 100%, .2)
+      cursor: pointer
+      font-size: 11px !important
+      
+
+// .cP > div > div.nH > div.nH > div.aC > div.nH > div.nH > div.nH > div.nH.b > div.nH > div.l.m

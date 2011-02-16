@@ -1,0 +1,105 @@
+/* ==UserScript==
+// @name          Gmail: Mac OS X Snow Leopard
+// @namespace     http://userstyles.org
+// @description    Gmail powered by Mac OS X.
+// @author        m.mike kondo
+// @homepage      http://userstyles.org/styles/17900
+// @include       https://mail.google.com/mail*
+// @include       http://mail.google.com/mail*
+*/
+
+#loading {
+  background: white url("images/Aurora.jpg") top center no-repeat !important;
+  background-size: 100%;
+}
+
+#loading .cmsg:first-child {
+  position: fixed !important;
+  width: 470px !important;
+  height: 250px !important;
+  top: 50% !important;
+  left: 50% !important;
+  margin-top: -185px !important;
+  margin-left: -235px !important;
+  padding-top: 120px !important;
+  background: rgba(232, 232, 232, 0.9) url("images/logo1.png") 165px 50px no-repeat !important;
+  text-align: center !important;
+  -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6) !important;
+}
+
+#loading .msg {
+  background: rgba(200, 200, 200, 0.6) !important;
+  width: 410px !important;
+  height: 75px !important;
+  margin-top: 50px !important;
+  margin-left: 30px !important;
+  padding-top: 25px !important;
+  font-family: "Lucida Grande", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: normal !important;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.7) !important;
+  -webkit-border-radius: 5px !important;
+  -webkit-border-radius: 5px !important;
+}
+
+#loading .lpb {
+  background: transparent url("images/progressbar-empty.png") repeat-x  !important;
+  height: 16px !important;
+  margin-top: -40px !important;
+  margin-left: 85px !important;
+  border: none !important;
+}
+
+#loading #lpt {
+  background: transparent url("images/progressbar-loading.gif") repeat-x !important;
+}
+
+#loading #lpt {
+  margin-top: -1px !important;
+}
+
+#stb.msgb {
+  background: rgba(0, 0, 0, 0.6) !important;
+  bottom: 0 !important;
+  padding: 6px 20px 4px !important;
+  font-size: 10px !important;
+  color: #fff !important;
+  -webkit-border-top-left-radius: 5px !important;
+  -webkit-border-radius-topleft: 5px !important;
+}
+
+#stb.msgb a {
+  color: #fff !important;
+}
+
+#loadingError.cmsg {
+  position: fixed !important;
+  background: rgba(232, 232, 232, 0.9) !important;
+  top: 50% !important;
+  left: 50% !important;
+  margin-top: -13px !important;
+  margin-left: -182px !important;
+  padding: 0 30px !important;
+  -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6) !important;
+  -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6) !important;
+}
+
+#loadingError.cmsg p {
+  font-size: 12px !important;
+  margin-top: 20px !important;
+  margin-bottom: 0px !important;
+}
+
+#loadingError.cmsg div {
+  font-size: 12px !important;
+}
+
+body div[class*="vI8oZc"] + .nH > .nH > .aC > .nH > .nH > .no {
+  z-index: 10 !important;
+  position: fixed !important;
+  background: transparent url(images/header-gradient.png) repeat-x !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 27px !important;
+  border-bottom: 1px solid #404040 !important;
+}
