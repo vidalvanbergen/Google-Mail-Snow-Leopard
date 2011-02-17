@@ -1,3 +1,6 @@
+=debug($color: red)
+  outline: 1px solid $color
+
 // Now with support for the latest webkit nightlies.
 =linear-gradient($color-stops, $start: top, $image: false)
   // Firefox's gradient api is nice.
@@ -15,7 +18,11 @@
     background-image: #{$background}-moz-linear-gradient($start, $color-stops) !important
   background-image: #{$background}linear-gradient($start, $color-stops) !important
 
-
+=border-radius($radius)
+  @if $radius == none
+    +experimental(border-radius, none, -moz, -webkit, -o, not -ms, not -khtml, official)
+  @else
+    +experimental(border-radius, $radius !important, -moz, -webkit, -o, not -ms, not -khtml, official)
 
 =box-shadows($shadows)
   @if $shadows == none

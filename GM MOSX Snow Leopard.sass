@@ -17,15 +17,30 @@ $experimental-support-for-khtml:      false
 =modal_dialog-hd
   +linear-gradient( color-stops( hsl(0, 0%, 35%), hsl(0, 0%, 35%) 50%, hsl(0, 0%, 25%) 50%, hsl(0, 0%, 25%)  ) )
 
-=button-bg
+=modal_button-bg
   +linear-gradient( color-stops( hsl(0, 0%, 35%), hsl(0, 0%, 35%) 50%, hsl(0, 0%, 25%) 50%, hsl(0, 0%, 25%)  ) )
   &:active
     +linear-gradient( color-stops( hsl(0, 0%, 30%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 20%) 50%, hsl(0, 0%, 20%)  ) )
 
+=metal-button
+  color: black !important
+  border: 1px solid hsl(0, 0%, 30%)
+  +linear-gradient( color-stops(hsl(0, 0%, 100%), hsl(0, 0%, 70%) ))
+  text-shadow: none
+  text-decoration: none !important
+  padding: 2px 6px
+  +border-radius(3px)
+  -webkit-box-shadow: 0 1px 0 hsla(0, 0%, 100%, .6), inset 0 1px 0 white
+  &:hover
+    +linear-gradient( color-stops(hsl(0, 0%, 100%), hsl(0, 0%, 80%) ))
+  &:active
+    +linear-gradient( color-stops(hsl(0, 0%, 90%), hsl(0, 0%, 60%) ))
+
 $modal_dialog-bg: hsla(0, 0%, 0%, .85)
 
+// Loading screen
 #loading
-  background: white url("images/Aurora.jpg") bottom center no-repeat !important
+  background: white image-url("Aurora.jpg") bottom center no-repeat !important
   background-size: 100%
   .cmsg:first-child
     position: fixed !important
@@ -36,7 +51,7 @@ $modal_dialog-bg: hsla(0, 0%, 0%, .85)
     margin-top: -185px !important
     margin-left: -235px !important
     padding-top: 120px !important
-    background: rgba(232, 232, 232, 0.9) url("images/logo1.png") 165px 50px no-repeat !important
+    background: rgba(232, 232, 232, 0.9) image-url("logo1.png") 165px 50px no-repeat !important
     text-align: center !important
     -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6) !important
   .msg
@@ -51,32 +66,33 @@ $modal_dialog-bg: hsla(0, 0%, 0%, .85)
     font-weight: normal !important
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.7) !important
     -webkit-border-radius: 5px !important
-    -webkit-border-radius: 5px !important
+    border-radius: 5px !important
   .lpb
-    background: transparent url("images/progressbar-empty.png") repeat-x  !important
+    background: transparent image-url("progressbar-empty.png") repeat-x  !important
     height: 16px !important
     margin-top: -40px !important
     margin-left: 85px !important
     border: none !important
   #lpt
-    background: transparent url("images/progressbar-loading.gif") repeat-x !important
+    background: transparent image-url("progressbar-loading.gif") repeat-x !important
   #lpt
     margin-top: -1px !important
 
-
+// Loading screen message
 #stb
   &.msgb
     background: rgba(0, 0, 0, 0.6) !important
     bottom: 0 !important
     padding: 6px 20px 4px !important
     font-size: 10px !important
+    height: 16px !important
     color: #fff !important
     -webkit-border-top-left-radius: 5px !important
     -webkit-border-radius-topleft: 5px !important
     a
       color: #fff !important
 
-
+// Loading error?
 #loadingError
   &.cmsg
     position: fixed !important
@@ -87,7 +103,6 @@ $modal_dialog-bg: hsla(0, 0%, 0%, .85)
     margin-left: -182px !important
     padding: 0 30px !important
     -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6) !important
-    -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6) !important
     p
       font-size: 12px !important
       margin-top: 20px !important
@@ -95,7 +110,7 @@ $modal_dialog-bg: hsla(0, 0%, 0%, .85)
     div
       font-size: 12px !important
 
-
+// Gmail Toolbar
 div[class*="vI8oZc"] + .nH > .nH > .aC > .nH > .nH > .no
   z-index: 10 !important
   position: fixed !important
@@ -105,17 +120,20 @@ div[class*="vI8oZc"] + .nH > .nH > .aC > .nH > .nH > .no
   width: 100% !important
   height: 28px !important
   border-bottom: 1px solid #404040 !important
-  & > .nH.nn:first-child
+  > .nH.nn:first-child
+    // Hide the google logo
     display: none !important
-  & .a9.Rgky9
+  .a9.Rgky9
     display: none !important
-  & table
+  .toxOdd
+
+  table
     position: fixed
     right: 128px
     top: 0
     height: 27px !important
     margin: 0 !important
-    & input[type='text']
+    input[type='text']
       // Search Field
       padding: 2px 4px 2px 20px !important
       margin: 0px !important
@@ -127,9 +145,9 @@ div[class*="vI8oZc"] + .nH > .nH > .aC > .nH > .nH > .no
       -webkit-box-shadow: inset 0px 1px 2px black
       &:focus
         -webkit-box-shadow: inset 0px 1px 2px black, 0 0 2px 2px hsl(212, 71.0407%, 56.6667%)
-    & [role='button']
+    [role='button']
       display: none !important
-    & .J-Zh-I-Js-Zq[role='button']
+    .J-Zh-I-Js-Zq[role='button']
       // Search Button
       border: 0 none !important
       position: absolute !important
@@ -147,14 +165,17 @@ div[class*="vI8oZc"] + .nH > .nH > .aC > .nH > .nH > .no
       display: block !important
       z-index: 30
       cursor: pointer !important
-    & .bN.bR
+    .bN.bR
       text-decoration: none !important
       margin-top: 8px !important
       margin-left: 8px !important
-    & [role='link']
-      color: black
+    .GcwpPb-txTtjf
+      text-decoration: none !important
+    .toxOdd
+      color: black !important
       text-shadow: #ddd 0 1px !important
       border: 0 none !important
+      text-decoration: none !important
       &:hover
         border-bottom: 1px solid black !important
 
@@ -272,6 +293,12 @@ html.cQ
   border-radius: 8px
   line-height: 18px
   padding: 5px 0 !important
+  text-align: left !important
+  .L4
+    color: white !important
+    font-weight: normal !important
+    padding: 0.2em 1.5em !important
+    font-weight: bold !important
   a
     color: white !important
     padding: 2px 18px !important
@@ -279,6 +306,8 @@ html.cQ
       background: none !important
       background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, hsl(215, 72%, 62%)), color-stop(100%, hsl(219, 78%, 41%))) !important
       background-image: linear-gradient(top, hsl(215, 72.1650%, 61.9608%) 0%, hsl(219, 78%, 41%) 100%) !important
+
+
 
 // .bA .J-N .e, .bA .J-N .Qu
   color: white !important
@@ -297,77 +326,355 @@ body
   // background: hsla(60, 100%, 90%, 1)
   // height: 100%
   // +linear-gradient(color-stops(hsl(208, 21.7391%, 86.4706%) 20%, white 20%, white), left)
-  background: transparent image-url('sidebarbg.png') repeat-y top left
-  
-  
+  // background: transparent image-url('sidebarbg.png') repeat-y top left
+  font-family: "Lucida Grande", sans-serif !important
 
-.cP > div > div.nH > div.nH > div.nH > div.no
+
+// Sidebar
+.cP > div > .nH > .nH > .nH > .no
   // margin-top: 27px !important
   // z-index: 99
   position: absolute
-  float: none !important
-  top: 32px
+  // float: none !important
+  top: 29px
   width: 100%
+  bottom: 0
+  // outline: 2px solid red
   z-index: 1 !important
   & > .nH.nn:first-child
-    border-right: 1px solid #8B8B8B
-    width: 200px !important
-    // height: 100% !important
-    // background: hsl(208, 22%, 87%) !important
+    border-right: 1px solid hsl(0, 0%, 55%)
+    width: 190px !important
+    background-color: hsl(210, 27%, 87%)
+    position: fixed
+    top: 27px
+    padding-top: 3px
+    left: 0px
+    bottom: 0px
     z-index: 1 !important
-  & > .nH.nn:last-child
-    background: white !important
-    position: absolute !important
-    left: 201px
-    top: 0
-    right: 0
-    bottom: 0
-    width: auto !important
-    z-index: 1 !important
-    .diLZtc > .nH > .nH:first-child
-      display: none !important
-    .nH.q0CeU
-      & > .pi
-        display: none !important
-      .l.n
-        // outline: 1px solid red
-        margin: 0 !important
+    overflow: auto
 
-.cP > div > div.nH > div.nH > div.nH > div.no
+// Sidebar contents
+.nH.CX.pp
+  .z9
+    // Mail
+    margin: 2px 0 !important
+    padding-left: 0px !important
+    .is
+      padding-left: 43px !important
+      background: transparent image-url('icons/gmail.png') no-repeat 23px 0px
+    &:last-child .is
+      // Contacts
+      background-image: image-url('icons/contacts.png')
+  .z8
+    background: transparent image-url('sidebar-selected-gradient.png') repeat-x center center !important
+    color: white !important
+
+.T4 .T3, .T4 .T1
+  // Tasks
+  margin: 2px 0 !important
+  padding-left: 43px !important
+  background: transparent image-url('icons/tasks.png') no-repeat 23px 2px !important
+  &:hover
+    background-color: #EEF2FF !important
+
+
+// Standart items
+.LrBjie
+  // +debug(green)
+  .TO
+    // +debug(blue)
+    &.nZ
+      background: transparent image-url('sidebar-selected-gradient.png') repeat-x center center !important
+      a
+        color: white !important
+    .TN
+      // +debug
+  .J-Ke.n0
+    padding-left: 22px
+    background: transparent image-url('icons/inbox.png') no-repeat 0 center
+    margin-left: -2px
+    &[href*='#mbox']
+      background-image: image-url('icons/inbox-important.png')
+    &[href*='#buzz']
+      background-image: image-url('icons/buzz-alt.png')
+    &[href*='#starred']
+      background-image: image-url('icons/starred.png')
+    &[href*='#imp']
+      background-image: image-url('icons/exclamation.png')
+    &[href*='#chats']
+      background-image: image-url('icons/chats-alt.png')
+    &[href*='#sent']
+      background-image: image-url('icons/sent.png')
+    &[href*='#drafts']
+      background-image: image-url('icons/drafts.png')
+    &[href*='#spam']
+      background-image: image-url('icons/spam.png')
+    &[href*='#trash']
+      background-image: image-url('icons/trash.png')
+  .n1
+    & [href*='#inbox']
+      background-image: image-url('icons/inbox-full.png') !important
+    & [href*='#mbox']
+      background-image: image-url('icons/inbox-important-full.png') !important
+  img[src*='cleardot']
+    display: none
+
+// Empty spacer
+// .oo .n6
+  display: none !important
+
+// Sidebar Contacts
+.nM .n3
+  margin-bottom: 10px
+  .nZ .TN
+    background: transparent image-url('sidebar-selected-gradient.png') repeat-x center center !important
+    a
+      color: white !important
+  [href*='#contacts']
+    padding-left: 20px
+    margin-left: -2px
+    background: transparent image-url('icons/adb-group.png') no-repeat 0 -1px
+  > div:first-child
+    [href*='#contacts']
+      background-image: image-url('icons/adb.png')
+  // > div:nth-child(2)
+    [href*='#contacts']
+      // background-image: image-url('icons/adb-group.png')
+  > div:nth-child(4)
+    [href*='#contacts']
+      background-image: image-url('icons/adb-smartgroup.png')
+  > div:nth-child(6), div:nth-child(7)
+    a
+      padding-left: 20px
+      margin-left: -2px
+      background: transparent image-url('icons/adb-import.png') no-repeat 0 -1px
+
+// Add-button bar
+
+// .nH.pp .n3
+  padding-bottom: 30px
+
+// .nH.pp
+  position: relative
+  margin-bottom: 0px !important
+  .nH.MX, .z0
+    border-top: 1px solid hsl(220, 23%, 85%)
+    background: white image-url('whitebg.png') repeat-x left top
+    -webkit-box-shadow: inset 0 1px 0 white
+    height: 22px
+    padding: 0 !important
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    [role='button']
+      height: 23px !important
+      width: 28px !important
+      padding: 0 !important
+      margin: 0 !important
+      overflow: hidden !important
+      text-indent: -9999999px
+      border: 0 !important
+      border-right: 1px solid hsl(220, 23%, 85%) !important
+      background: transparent image-url('AddsubscriptionButton.png') no-repeat center center !important
+      -webkit-box-shadow: inset 1px 0 0 white
+      -webkit-border-radius: 0 !important
+      border-radius: 0 !important
+      z-index: 1
+      &:hover
+        cursor: pointer !important
+      &:active
+        background-image: image-url("AddsubscriptionButtonActive.png") !important
+
+.pp .pw
+  color: hsl(215, 12%, 50%) !important
+  text-shadow: 0 1px 0 white
+
+// Sidebar contents
+// .cP > div > .nH > .nH > .nH > .no
   & > .nH.nn:first-child
-    & > div.nH div.z9
+    & > .nH .z9
       // Mail
       margin: 2px 0 !important
       padding-left: 0px !important
       & > span.is
         padding-left: 43px !important
-        background: transparent image-url('icons/outbox.png') no-repeat 23px 0px
+        background: transparent image-url('icons/gmail.png') no-repeat 23px 0px
         // outline: 1px solid red
         // margin: 0 !important
         // line-height: 22px !important
-    & > div.nH div.z9:last-child
+    & > .nH .z9:last-child
       & > span.is
         background-image: image-url('icons/contacts.png')
-    & > div.nH div.z9.z8
+    & > .nH .z9.z8
       background: transparent image-url('sidebar-selected-gradient.png') repeat-x center center !important
       color: white !important
-    & > div.nH div.T4
+    & > .nH .T4
       padding-left: 0px !important
-      & div.T3
+      & .T3
         margin: 2px 0 !important
         padding-left: 43px !important
         background: transparent image-url('icons/tasks.png') no-repeat 23px 2px !important
         &:hover
           background-color: #EEF2FF !important
+
+// Section
+.cP > div > .nH > .nH > .nH > .no
+  & > .nH.nn:last-child
+    z-index: 1 !important
+    // +debug
+    float: none !important
+    > .nH
+      // +debug(blue)
+    .diLZtc > .nH > .nH:first-child
+      // Hide google ad
+      display: none !important
+    .nH.q0CeU
+      & > .pi
+        // Hide top/bottom borders
+        display: none !important
+      .l.n
+        // outline: 1px solid red
+        margin: 0 !important
+
+// Section
+.nH.q0CeU.z .k, .nH.q0CeU.v, .nH.q0CeU.C
+  // display: none !important
+  position: fixed !important
+  left: 191px
+  right: 0px
+  bottom: 0
+  top: 27px
+  margin-bottom: 26px !important
+  background: white
+  overflow: auto
+  .diLZtc
+    width: 100% !important
+    height: 100% !important
+  .MQ
+    // +debug
+
+// Actionbar top
+.VP5otc-pzeoBf, .iI
+  +linear-gradient( color-stops( hsl(0, 0%, 52%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 23%) 50%, hsl(260, 2%, 26%)) )
+  line-height: 30px
+  border-bottom: 1px solid black
+  color: white !important
+  padding: 0px 10px !important
+  // height: 31px !important
+  // overflow: hidden
+  font-family: "Lucida Grande" !important
+  [role='button'], .VP5otc-MdoD9, [role='link']
+    border: 1px solid black !important
+    background: none !important
+    padding: 3px 8px !important
+    color: white !important
+    text-shadow: -1px -1px 0 black
+    font-weight: normal !important
+    -webkit-box-shadow: 0 1px 0 hsla(0, 0%, 100%, .3), inset 0 1px 0 hsla(0, 0%, 100%, .1)
+    +linear-gradient( color-stops( hsl(0, 0%, 52%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 23%) 50%, hsl(260, 2%, 26%)) )
+    text-decoration: none !important
+    font-family: "Lucida Grande" !important
+    font-size: 11px !important
+    cursor: pointer !important
+    &:active
+      +linear-gradient( color-stops( darken(hsl(0, 0%, 52%), 10%), darken(hsl(0, 0%, 30%), 10%) 50%, darken(hsl(0, 0%, 23%), 10%) 50%, darken(hsl(260, 2%, 26%), 10%) ), top )
+      outline: none
+  .VP5otc-MdoD9, [role='link']
+    +border-radius(3px)
+  .VP5otc-tOAp0c
+    -webkit-border-image: image-url("allitemstoggle.png") 1 2 2 12 stretch stretch !important
+    border-width: 1px 2px 2px 12px !important
+    font-size: 12px !important
+    color: white !important
+    text-decoration: none !important
+    text-shadow: -1px -1px 0 black
+    font-weight: normal !important
+    padding-top: 2px !important
+    padding-bottom: 1px !important
+    padding-right: 6px !important
+    line-height: 16px !important
+    margin-top: 6px
+    &:active
+      -webkit-border-image: image-url("allitemstoggleactive.png") 1 2 2 12 stretch stretch !important
+  .nH.vpUyzb.Cr, .h0
+    padding: 0 !important
+    margin: 0 !important
+  .Dj, .h0
+    color: white !important
+    font-size: 10px !important
+    // margin-top: -5px !important
+    
+  .h0 span
+    margin: 0 5px
+
+  .J-Zh-I.J-J5-Ji.J-Zh-I-Js-Zj.J-Zh-I-KE,
+  .J-Zh-I.J-J5-Ji.J-Zh-I-Js-Zq.J-Zh-I-Js-Zj
+    border-right: 0 !important
+  .VP5otc-d2fWKd.J-J5-Ji
+    border-color: white transparent !important
+    height: 0 !important
+    width: 0 !important
+    position: absolute
+    top: -2px
+    right: -2px
+    -webkit-box-shadow: 0px -1px 0 black
+    // outline: 1px solid red
+    border-style: solid
+    border-width: 4px 4px 0 4px
+    background: transparent none !important
+
+
+// Actionbar bottom
+.VP5otc-U4m8q
+  display: none !important
+
+// Footer
+.l2
+  // outline: 1px solid red
+  // display: none
+  position: fixed
+  bottom: 0 !important
+  left: 191px
+  width: 100%
+  height: 25px
+  // border-top: 1px solid hsl(0, 0%, 55%)
+  // background-color: hsl(0, 0%, 95%)
+  background: image-url('footergradient.png') repeat left top
+  border-top: 1px solid #383F4C
+  text-align: center
+  [role='contentinfo'], .mn, .mp, .ma
+    display: none !important
+  .mj
+    position: absolute
+    left: 10px
+    top: 0
+    line-height: 25px
+    // color: #333 !important
+    color: white !important
+    text-shadow: 0 1px 0 black
+  .l6
+    // color: #333 !important
+    color: white !important
+    text-shadow: 0 1px 0 black
+    position: fixed
+    bottom: 5px
+    right: 5px
+    padding: 0 !important
+    span
+      +metal-button
+
+
 //
-  .cP > div > div.nH > div.nH > div.nH > div.no
+  .cP > div > .nH > .nH > .nH > .no
   & > .nH.nn:first-child
     // New item button
-    div.n3
+    .n3
       position: relative !important
       padding-bottom: 24px
-    div.z0,
-    div.MX
+    .z0,
+    .MX
       // Sidebar actionbar background
       // position: absolute !important
       // bottom: 0
@@ -377,8 +684,8 @@ body
       background: transparent image-url('whitebg.png') repeat-x top left
       border-top: 1px solid hsl(0, 0%, 80%)
       -webkit-box-shadow: inset 0 1px 0 white
-    div.J-Zh-I.J-J5-Ji.L3,
-    div.J-J5-Ji.J-Zh-I
+    .J-Zh-I.J-J5-Ji.L3,
+    .J-J5-Ji.J-Zh-I
       // Add subscription button
       background: transparent image-url('AddsubscriptionButton.png') no-repeat center center !important
       height: 23px
@@ -392,7 +699,7 @@ body
       border: 0 none !important
       border-right: 1px solid hsl(0, 0%, 80%) !important
       border-radius: 0 !important
-    div.n6
+    .n6
       margin-top: -24px
       z-index: 8
       span.J-Ke.n4.toxOdd
@@ -408,64 +715,63 @@ body
         text-indent: -999999px
         background: transparent image-url('gear2.png') no-repeat center center
 
-body > div > div.nH > div.nH > div.aC > div.nH > div.nH
+.cP > div > .nH > .nH > .aC > .nH > .nH
   // Searchbox Header
-  & > div.no > div.nH.nn > div.nH > div.nH.aK,
-  & > div.no > div.nH.nn > div.nH > div.nH.aJ
+  .GcwpPb-vMLT3c, .GcwpPb-y3LeUb
     // outline: 1px solid red
     width: 800px !important
     margin: 68px auto 0 !important
     position: relative !important
     left: 86px
-    & div.pi
+    & .pi
       display: none !important
-    & > div.nH
-      & div.l.m
+    & > .nH
+      & .l.m
         background: $modal_dialog-bg !important
         +modal_dialog-hd
         margin: 0 !important
         +border-top-radius(5px)
         border-top: 1px solid gray
-      & div.l.m > div.l.n
+      & .l.m > .l.n
         background: transparent !important
-      & div.l.m > div.l.n > div.k
+      & .l.m > .l.n > .k
         background: transparent !important
         // margin: 0 !important
         // padding: 10px 0 !important
         font-size: 12px !important
         height: 21px !important
-        & > div.diLZtc > div.nH > span.aI
-          color: white !important
-          line-height: 22px
-          margin-left: 8px !important
-        & > div.diLZtc > div.nH > span.a5
-          height: 30px !important
-          width: 30px !important
-          overflow: hidden !important
-          background: transparent url('images/closebox.png') no-repeat center center !important
-          text-indent: -999999px !important
-          top: -10px !important
-          &:active
-            background-image: url('images/closebox_pressed.png') !important
+    .GcwpPb-ZQWore
+      color: white !important
+      line-height: 22px
+      margin-left: 8px !important
+    .GcwpPb-J0mikc
+      height: 30px !important
+      width: 30px !important
+      overflow: hidden !important
+      background: transparent url('images/closebox.png') no-repeat center center !important
+      text-indent: -999999px !important
+      top: -10px !important
+      &:active
+        background-image: url('images/closebox_pressed.png') !important
 
   // Searchbox Content
-  & > div.nH
-    & div.pi
+  & > .nH
+    & .pi
       display: none
-    & > div.nH
+    & > .nH
       position: relative !important
       width: 800px !important
       margin: 132px auto !important
       z-index: 50 !important
-      & div.l.m
+      & .l.m
         background: $modal_dialog-bg !important
         margin: 0 !important
         // border-top: 1px dashed gray
         +box-shadow(hsla(0, 0%, 0%, .4), 0px, 5px, 10px, 5px)
         +border-bottom-radius(5px)
-      & div.l.m > div.l.n
+      & .l.m > .l.n
         background: transparent !important
-      & div.l.m > div.l.n > div.k
+      & .l.m > .l.n > .k
         background: transparent !important
         margin: 0 !important
         padding: 10px 0 !important
@@ -475,7 +781,7 @@ body > div > div.nH > div.nH > div.aC > div.nH > div.nH
     & button
       // outline: 1px solid red !important
       background-color: $modal_dialog-bg !important
-      +button-bg
+      +modal_button-bg
       color: white !important
       padding: 4px 12px !important
       border: 1px solid black !important
@@ -483,6 +789,12 @@ body > div > div.nH > div.nH > div.aC > div.nH > div.nH
       -webkit-box-shadow: 0 1px 0 hsla(0, 0%, 100%, .2), inset 0 2px 2px hsla(0, 0%, 100%, .2)
       cursor: pointer
       font-size: 11px !important
-      
 
-// .cP > div > div.nH > div.nH > div.aC > div.nH > div.nH > div.nH > div.nH.b > div.nH > div.l.m
+.b8.UC
+  +debug(blue)
+  .J-J5-Ji
+    +debug(green)
+.b8.vh
+  +debug
+  position: relative !important
+  z-index: 9999 !important
