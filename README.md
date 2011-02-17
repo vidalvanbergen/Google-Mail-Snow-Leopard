@@ -1,5 +1,5 @@
-Google Mail Mac OS X Snow Leopard
------------------------------------------------
+Gmail Mac OS X Snow Leopard
+---------------------------
 
 Originally based on [Gmail: Mac OS X Snow Leopard](http://userstyles.org/styles/17900), and now available as a safari extension!
 
@@ -16,6 +16,6 @@ How to Install
 CREDITS
 -------
 
-Mac OS X Snow Leopard + Delicious by M.Mike Kondo (http://userstyles.org/users/20999).
+Mac OS X Snow Leopard idea by M.Mike Kondo (http://userstyles.org/users/20999).
 
-I (Vidal) repackaged it for Safari 5, updated some parts that were no longer working, and made a few of my own adjustments.
+I (Vidal) rebuild this one from scratch for Safari 5.
