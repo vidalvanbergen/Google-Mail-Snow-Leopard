@@ -14,13 +14,40 @@ $experimental-support-for-opera:      false
 $experimental-support-for-microsoft:  false
 $experimental-support-for-khtml:      false
 
-=modal_dialog-hd
-  +linear-gradient( color-stops( hsl(0, 0%, 35%), hsl(0, 0%, 35%) 50%, hsl(0, 0%, 25%) 50%, hsl(0, 0%, 25%)  ) )
+=modal_window_header
+  +linear-gradient( color-stops( hsl(0, 0%, 52%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 23%) 50%, hsl(260, 2%, 26%)) )
+  +border-top-radius(5px)
 
 =modal_button-bg
   +linear-gradient( color-stops( hsl(0, 0%, 35%), hsl(0, 0%, 35%) 50%, hsl(0, 0%, 25%) 50%, hsl(0, 0%, 25%)  ) )
   &:active
     +linear-gradient( color-stops( hsl(0, 0%, 30%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 20%) 50%, hsl(0, 0%, 20%)  ) )
+
+=metal_window_header
+  +linear-gradient( color-stops( #cfcfcf, #a8a8a8 ) )
+  +box-shadow(inset, 0, 1px, 0, hsla(0, 0%, 100%, .5))
+  +border-top-radius(5px)
+  border: 1px solid #bdbdbd
+  border-bottom-color: #515151
+
+=modal_button
+  border: 1px solid black !important
+  background: none !important
+  padding: 3px 8px !important
+  color: white !important
+  text-shadow: -1px -1px 0 black
+  font-weight: normal !important
+  -webkit-box-shadow: 0 1px 0 hsla(0, 0%, 100%, .3), inset 0 1px 0 hsla(0, 0%, 100%, .1)
+  +linear-gradient( color-stops( hsl(0, 0%, 52%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 23%) 50%, hsl(260, 2%, 26%)) )
+  text-decoration: none !important
+  font-family: "Lucida Grande", Lucida, "Helvetica Neue", Helvetica, Arial, sans-serif !important
+  font-size: 11px !important
+  cursor: pointer !important
+  &:hover
+    +linear-gradient( color-stops( lighten(hsl(0, 0%, 52%), 10%), lighten(hsl(0, 0%, 30%), 10%) 50%, lighten(hsl(0, 0%, 23%), 10%) 50%, lighten(hsl(260, 2%, 26%), 10%) ), top )
+  &:active
+    +linear-gradient( color-stops( darken(hsl(0, 0%, 52%), 10%), darken(hsl(0, 0%, 30%), 10%) 50%, darken(hsl(0, 0%, 23%), 10%) 50%, darken(hsl(260, 2%, 26%), 10%) ), top )
+    outline: none
 
 =metal-button
   color: black !important
@@ -374,8 +401,6 @@ body
   margin: 2px 0 !important
   padding-left: 43px !important
   background: transparent image-url('icons/tasks.png') no-repeat 23px 2px !important
-  &:hover
-    background-color: #EEF2FF !important
 
 
 // Standart items
@@ -419,12 +444,16 @@ body
   img[src*='cleardot']
     display: none
 
-// Empty spacer
-// .oo .n6
-  display: none !important
+// Sidebar Heading seperators
+.T0, .TZ
+  border-top-color: hsla(0, 0%, 0%, .2) !important
+  +box-shadow(inset, 0, 1px, 0, hsla(0, 0%, 100%, .6))
+.T4
+  border-bottom-color: hsla(0, 0%, 0%, .2) !important
+  +box-shadow(hsla(0, 0%, 100%, .6), 0, 1px, 0)
 
 // Sidebar Contacts
-.nM .n3
+.nM > .n3
   margin-bottom: 10px
   .nZ .TN
     background: transparent image-url('sidebar-selected-gradient.png') repeat-x center center !important
@@ -444,10 +473,24 @@ body
     [href*='#contacts']
       background-image: image-url('icons/adb-smartgroup.png')
   > div:nth-child(6), div:nth-child(7)
-    a
+    .CK
       padding-left: 20px
       margin-left: -2px
       background: transparent image-url('icons/adb-import.png') no-repeat 0 -1px
+
+// Sublink background-color
+.pU
+  background: transparent !important
+
+// Collapse icons
+.pp .pr .pq
+  background: transparent image-url('miniplus.png') no-repeat center center !important
+  &:active
+    background-image: image-url('miniplusactive.png') !important
+.pp .pv .pq
+  background: transparent image-url('miniminus.png') no-repeat center center !important
+  &:active
+    background-image: image-url('miniminusactive.png') !important
 
 // Add-button bar
 
@@ -537,6 +580,10 @@ body
       .l.n
         // outline: 1px solid red
         margin: 0 !important
+        
+// Hide google ad
+.nH.OH0apf
+  outline: 1px solid red
 
 // Section
 .nH.q0CeU.z .k, .nH.q0CeU.v, .nH.q0CeU.C
@@ -555,6 +602,95 @@ body
   .MQ
     // +debug
 
+// Mailbox
+.ya
+  background-color: #FF8 !important
+.F
+  .xY
+    border-bottom: 0px none !important
+  tr:nth-child(2n+1)
+    td
+      background-color: hsl(220, 90%, 96%) !important
+  tr:nth-child(2n)
+    td
+      background-color: white !important
+  .EqK8f
+    background: transparent image-url('icons/starred-empty.png') no-repeat center center !important
+  .W5RYx
+    background: transparent image-url('icons/starred.png') no-repeat center center !important
+
+// Floating mail message
+.yo
+  // border: 2px solid white !important
+  +border-radius(5px)
+  table:first-child
+    +border-top-radius(5px)
+  table:last-child
+    +border-top-radius(0)
+    +border-bottom-radius(5px)
+  .yz
+    +modal_window_header
+    +border-top-radius(0)
+    .yw
+      color: white !important
+    .VP5otc-HT6HAf.J-J5-Ji
+      margin-left: 10px
+      [role='button']
+        +modal_button
+        border-right: none !important
+        &:last-child
+          border-right: 1px solid black !important
+    .Wx
+      // Next / Previous arrow buttons
+      div:first-child, div:nth-child(2)
+        border: 1px solid black !important
+        background: none !important
+        padding: 0px 5px 2px !important
+        margin: 0 !important
+        color: white !important
+        text-shadow: -1px -1px 0 black
+        font-weight: normal !important
+        -webkit-box-shadow: 0 1px 0 hsla(0, 0%, 100%, .3), inset 0 1px 0 hsla(0, 0%, 100%, .1)
+        +linear-gradient( color-stops( hsl(0, 0%, 52%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 23%) 50%, hsl(260, 2%, 26%)) )
+        text-decoration: none !important
+        font-family: "Lucida Grande", Lucida, "Helvetica Neue", Helvetica, Arial, sans-serif !important
+        font-size: 11px !important
+        cursor: pointer !important
+        &:hover
+          +linear-gradient( color-stops( lighten(hsl(0, 0%, 52%), 10%), lighten(hsl(0, 0%, 30%), 10%) 50%, lighten(hsl(0, 0%, 23%), 10%) 50%, lighten(hsl(260, 2%, 26%), 10%) ), top )
+        &:active
+          +linear-gradient( color-stops( darken(hsl(0, 0%, 52%), 10%), darken(hsl(0, 0%, 30%), 10%) 50%, darken(hsl(0, 0%, 23%), 10%) 50%, darken(hsl(260, 2%, 26%), 10%) ), top )
+          outline: none
+      div:first-child
+        +border-right-radius(3px)
+      div:nth-child(2)
+        border-right: none !important
+        +border-left-radius(3px)
+    .Wv
+      // Close button
+      position: absolute
+      top: -12px
+      right: -12px
+      background: transparent image-url("closebox.png") no-repeat center center !important
+      height: 30px !important
+      width: 30px !important
+      border: none !important
+      &:active
+        background-image: image-url('closebox_pressed.png') !important
+  .ys
+    background-color: transparent !important
+  .SK
+    padding: 0 !important
+    // border: 2px solid white !important
+    +border-radius(5px)
+  
+  .yx
+    background-color: hsla(0, 0%, 0%, .8) !important
+    .yu
+      color: hsla(0, 0%, 100%, .8) !important
+      &:hover
+        border-bottom: 1px solid
+
 // Actionbar top
 .VP5otc-pzeoBf, .iI
   +linear-gradient( color-stops( hsl(0, 0%, 52%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 23%) 50%, hsl(260, 2%, 26%)) )
@@ -564,23 +700,9 @@ body
   padding: 0px 10px !important
   // height: 31px !important
   // overflow: hidden
-  font-family: "Lucida Grande" !important
+  font-family: "Lucida Grande", Lucida, "Helvetica Neue", Helvetica, Arial, sans-serif !important
   [role='button'], .VP5otc-MdoD9, [role='link']
-    border: 1px solid black !important
-    background: none !important
-    padding: 3px 8px !important
-    color: white !important
-    text-shadow: -1px -1px 0 black
-    font-weight: normal !important
-    -webkit-box-shadow: 0 1px 0 hsla(0, 0%, 100%, .3), inset 0 1px 0 hsla(0, 0%, 100%, .1)
-    +linear-gradient( color-stops( hsl(0, 0%, 52%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 23%) 50%, hsl(260, 2%, 26%)) )
-    text-decoration: none !important
-    font-family: "Lucida Grande" !important
-    font-size: 11px !important
-    cursor: pointer !important
-    &:active
-      +linear-gradient( color-stops( darken(hsl(0, 0%, 52%), 10%), darken(hsl(0, 0%, 30%), 10%) 50%, darken(hsl(0, 0%, 23%), 10%) 50%, darken(hsl(260, 2%, 26%), 10%) ), top )
-      outline: none
+    +modal_button
   .VP5otc-MdoD9, [role='link']
     +border-radius(3px)
   .VP5otc-tOAp0c
@@ -605,12 +727,13 @@ body
     color: white !important
     font-size: 10px !important
     // margin-top: -5px !important
-    
+    // height: 16px !important
   .h0 span
     margin: 0 5px
 
   .J-Zh-I.J-J5-Ji.J-Zh-I-Js-Zj.J-Zh-I-KE,
-  .J-Zh-I.J-J5-Ji.J-Zh-I-Js-Zq.J-Zh-I-Js-Zj
+  .J-Zh-I.J-J5-Ji.J-Zh-I-Js-Zq.J-Zh-I-Js-Zj,
+  .J-Zh-I.J-J5-Ji.J-Zh-I-Js-Zj.L3
     border-right: 0 !important
   .VP5otc-d2fWKd.J-J5-Ji
     border-color: white transparent !important
@@ -627,7 +750,7 @@ body
 
 
 // Actionbar bottom
-.VP5otc-U4m8q
+.VP5otc-U4m8q, .nH.OH0apf
   display: none !important
 
 // Footer
@@ -722,13 +845,13 @@ body
     width: 800px !important
     margin: 68px auto 0 !important
     position: relative !important
-    left: 86px
+    // left: 86px
     & .pi
       display: none !important
     & > .nH
       & .l.m
         background: $modal_dialog-bg !important
-        +modal_dialog-hd
+        +modal_window_header
         margin: 0 !important
         +border-top-radius(5px)
         border-top: 1px solid gray
@@ -790,11 +913,178 @@ body
       cursor: pointer
       font-size: 11px !important
 
-.b8.UC
-  +debug(blue)
-  .J-J5-Ji
-    +debug(green)
-.b8.vh
-  +debug
-  position: relative !important
-  z-index: 9999 !important
+// Notifications
+.b8.UC .J-J5-Ji .vh
+  border-radius: 5px !important
+  -webkit-box-shadow: 0 0 10px black
+  padding: 5px 10px 15px !important
+  position: fixed !important
+  bottom: -13px !important
+.aC .nH .nH .no .nH.nn:last-child
+  // position: fixed !important
+  // bottom: -13px
+  // left: 340px !important
+  width: 100% !important
+  .UB, .UD
+    display: none !important
+  .b8 .vh
+    background: hsla(0, 0%, 0%, .8) !important
+    border: 2px solid white
+    color: white !important
+    font-weight: normal !important
+
+// Popup Menu's
+.TO.NQ, .T2, .nH.T4.pp:hover
+  background: transparent image-url('sidebar-hover-gradient.png') repeat-x left top !important
+  // background-color: royalblue !important
+  color: black !important
+  .T3,
+  a
+    color: black !important
+
+.TM, .TL
+  margin-left: 15px !important
+.AX, .AR, .tT .J-M
+  margin-top: 5px !important
+
+.TM, .TL,
+.AX, .AR, .tT .J-M
+  background-color: hsla(0, 0%, 0%, .8) !important
+  border: 2px solid white !important
+  +border-radius(5px)
+  // margin-left: 10px !important
+  .A0
+    // lil magnifier glas
+    top: 1.5em !important
+  .CM
+    height: 1px !important
+    background: hsla(0, 0%, 100%, .4)
+    border-top: 1px solid hsla(0, 0%, 0%, .9)
+    margin: 5px 0
+    display: block !important
+  .J-Ke.n0, .CK
+    color: white !important
+  .J-N, .J-JK, .J-LC
+    color: white !important
+    padding: 2px 6px !important
+    font-family: "Lucida Grande", Lucida, "Helvetica Neue", Helvetica, Arial, sans-serif
+  .TO.NQ, .CL:hover, .J-N-JT, .J-JK-JT, .J-LC-JT
+    background: hsl(225, 73%, 57%) !important
+    color: white !important
+    a
+      color: white !important
+  .J-N.J-N-JE
+    color: hsla(0, 0%, 100%, .6) !important
+
+// Tasks widget
+.Hd
+  +box-shadow(hsla(0, 0%, 0%, .5), 0, 3px, 15px)
+  +border-top-radius(5px)
+.Hy
+  +metal_window_header
+  .Hp
+    color: black !important
+    font-family: "Lucida Grande"
+    font-weight: normal !important
+    text-shadow: 0px 1px 0px hsla(0, 0%, 100%, .6)
+    line-height: 20px
+    // width: 100% !important
+  .Ht
+    td:first-child
+      float: right
+      width: 170px !important
+    td.Hm
+      float: left
+  .Ha, .Hq, .Hl, .Hk
+    float: left !important
+  .Hq
+    float: right !important
+  .Hn, .Hb, .Hr
+    background-color: transparent !important
+  .Ha, .Hq, .Hl, .Hn, .Hb, .Hr, .Hk
+    height: 20px !important
+    width: 20px !important
+    background-image: image-url('icons/window-dots.png') !important
+    background-position: 0px 1px !important
+  .Ha
+    background-position: -42px 1px !important
+  .Hl
+    background-position: -21px 1px !important
+  .Hq.Hr
+    background-position: 0px -19px !important
+  .Hl.Hn
+    background-position: -21px -19px !important
+  .Ha.Hb
+    background-position: -42px -19px !important
+.Hy .m, .Hy .pi, .Hy .n, .Hy .k, .Hy .o, .Hy .p, .Hy .q
+  background: transparent !important
+  // -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C4C4C4), to(#979797)) !important
+  
+.JkeJgf
+  // background-image: none !important
+
+// Compose Mail
+.nH.q0CeU.x, .nH.q0CeU.B
+  position: absolute
+  top: 0
+  left: 191px
+  right: 0
+  .nH.Cp
+    padding-bottom: 27px !important
+  .pi, .CoUvaf, .Aq
+    display: none !important
+.dW
+  // Toolbar
+  height: 45px
+  // line-height: 45px
+  border-bottom: 1px solid #404040
+  +metal-window-header
+  +border-top-radius(4px)
+  [role='button']
+  
+    // outline: 1px solid red !important
+    width: 65px !important
+    background: none !important
+    border: none !important
+    font-family: "Lucida Grande", Lucida, "Helvetica Neue", Helvetica, Arial, sans-serif !important
+    text-shadow: 0 1px 0 hsla(0, 0%, 100%, .8)
+    padding-top: 30px !important
+    margin: 0 0 2px !important
+    cursor: pointer !important
+    background: transparent image-url('ComposeButtons.png') no-repeat 20px 5px !important
+    b
+      font-weight: normal !important
+  .J-Zh-I.J-J5-Ji.Bq.L3
+    &:nth-child(1):hover
+      // Send
+      background-position: -47px 5px !important
+    &:nth-child(2)
+      // Drafts
+      background-position: -115px 5px !important
+      &:hover
+        background-position: -241px 5px !important
+      &.J-Zh-I-JE
+        // Drafts disabled
+        background-position: -178px 5px !important
+        cursor: default !important
+        &:hover
+          background-position: -178px 5px !important
+    &:nth-child(3)
+      // Discard
+      background-position: -304px 5px !important
+      &:hover
+        background-position: -367px 5px !important
+.fN
+  // From / To / Subject / etc...
+  background: hsl(0, 0%, 92%) !important
+  [role='link'], .el
+    color: black !important
+  .cf
+    background: none !important
+  .eL, .eM, .eK
+    border: 1px solid transparent !important
+    cursor: pointer !important
+  .e7, .eW
+    background-color: hsl(0, 0%, 70%) !important
+  .e9
+    border-color: hsla(0, 0%, 0%, .6) hsla(0, 0%, 100%, .6) hsla(0, 0%, 100%, .6) hsla(0, 0%, 0%, .6) !important
