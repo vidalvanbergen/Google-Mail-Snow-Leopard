@@ -1,0 +1,199 @@
+.cP > div > .nH > .nH > .aC > .nH > .nH
+  // Searchbox Header
+  .GcwpPb-vMLT3c, .GcwpPb-y3LeUb
+    // outline: 1px solid red
+    width: 800px !important
+    margin: 68px auto 0 !important
+    position: relative !important
+    // left: 86px
+    & .pi
+      +hide
+    & > .nH
+      & .l.m
+        background: $modal_dialog-bg !important
+        +modal_window_header
+        margin: 0 !important
+        +border-top-radius(5px)
+        border-top: 1px solid gray
+      & .l.m > .l.n
+        background: transparent !important
+      & .l.m > .l.n > .k
+        background: transparent !important
+        // margin: 0 !important
+        // padding: 10px 0 !important
+        font-size: 12px !important
+        height: 21px !important
+    .GcwpPb-ZQWore
+      color: white !important
+      line-height: 22px
+      margin-left: 8px !important
+    .GcwpPb-J0mikc
+      height: 30px !important
+      width: 30px !important
+      overflow: hidden !important
+      background: transparent url('images/closebox.png') no-repeat center center !important
+      text-indent: -999999px !important
+      top: -10px !important
+      &:active
+        background-image: url('images/closebox_pressed.png') !important
+
+  // Searchbox Content
+  & > .nH
+    & .pi
+      +hide
+    & > .nH
+      position: relative !important
+      width: 800px !important
+      margin: 132px auto !important
+      z-index: 50 !important
+      & .l.m
+        background: $modal_dialog-bg !important
+        margin: 0 !important
+        // border-top: 1px dashed gray
+        +box-shadow(hsla(0, 0%, 0%, .4), 0px, 5px, 10px, 5px)
+        +border-bottom-radius(5px)
+      & .l.m > .l.n
+        background: transparent !important
+      & .l.m > .l.n > .k
+        background: transparent !important
+        margin: 0 !important
+        padding: 10px 0 !important
+        color: white !important
+      & span.e
+        color: gray !important
+    & button
+      // outline: 1px solid red !important
+      background-color: $modal_dialog-bg !important
+      +modal_button-bg
+      color: white !important
+      padding: 4px 12px !important
+      border: 1px solid black !important
+      +border-radius(16px)
+      -webkit-box-shadow: 0 1px 0 hsla(0, 0%, 100%, .2), inset 0 2px 2px hsla(0, 0%, 100%, .2)
+      cursor: pointer
+      font-size: 11px !important
+
+// Notifications ---------------------------------------------------------
+.b8.UC .J-J5-Ji .vh
+  border-radius: 5px !important
+  -webkit-box-shadow: 0 0 10px black
+  padding: 5px 10px 15px !important
+  position: fixed !important
+  bottom: -13px !important
+.aC .nH .nH .no .nH.nn:last-child
+  width: 100% !important
+.b8
+  .vh
+    background: hsla(0, 0%, 0%, .8) !important
+    border: 2px solid white
+    color: white !important
+    font-weight: normal !important
+    .ca, a
+      color: hsla(0, 0%, 100%, .8) !important
+  .UB, .UD
+    +hide
+
+// Popup Menu's
+.TO.NQ, .T2, .nH.T4.pp:hover
+  background: transparent image-url('sidebar-hover-gradient.png') repeat-x left top !important
+  // background-color: royalblue !important
+  color: black !important
+  .T3,
+  a
+    color: black !important
+
+.TM, .TL
+  margin-left: 15px !important
+.AX, .AR, .tT .J-M
+  margin-top: 5px !important
+
+.SK.AX.M4 > div
+  color: white !important
+  padding: 2px 6px !important
+  font-family: "Lucida Grande", Lucida, "Helvetica Neue", Helvetica, Arial, sans-serif
+
+.TM, .TL,
+.AX, .AR, .tT .J-M
+  background-color: hsla(0, 0%, 0%, .8) !important
+  border: 2px solid white !important
+  +border-radius(5px)
+  // margin-left: 10px !important
+  .CM
+    height: 1px !important
+    background: hsla(0, 0%, 100%, .4)
+    border-top: 1px solid hsla(0, 0%, 0%, .3)
+    margin: 5px 0
+    display: block !important
+  .TA + .CM
+    display: none !important
+  .A0
+    // lil magnifier glas
+    top: 1.5em !important
+  .J-Ke.n0, .CK
+    color: white !important
+  .J-N, .J-JK, .J-LC
+    color: white !important
+    padding: 2px 6px !important
+    font-family: "Lucida Grande", Lucida, "Helvetica Neue", Helvetica, Arial, sans-serif
+  .TO.NQ, .CL:hover, .J-N-JT, .J-JK-JT, .J-LC-JT
+    background: hsl(225, 73%, 57%) !important
+    color: white !important
+    a
+      color: white !important
+  .J-N.J-N-JE
+    color: hsla(0, 0%, 100%, .6) !important
+
+// Contacts - Popdown
+.mvpDrf
+  .Dj:after
+    content: " ▾"
+    color: white !important
+  .Di .MV
+    color: white !important
+    text-decoration: none !important
+  .Uz
+    +hide
+
+// Tasks widget
+.Hd
+  +box-shadow(hsla(0, 0%, 0%, .5), 0, 3px, 15px)
+  +border-top-radius(5px)
+.Hy
+  +metal_window_header
+  .Hp
+    color: black !important
+    font-family: "Lucida Grande"
+    font-weight: normal !important
+    text-shadow: 0px 1px 0px hsla(0, 0%, 100%, .6)
+    line-height: 20px
+    // width: 100% !important
+  .Ht
+    td:first-child
+      float: right
+      width: 170px !important
+    td.Hm
+      float: left
+  .Ha, .Hq, .Hl, .Hk
+    float: left !important
+  .Hq
+    float: right !important
+  .Hn, .Hb, .Hr
+    background-color: transparent !important
+  .Ha, .Hq, .Hl, .Hn, .Hb, .Hr, .Hk
+    height: 20px !important
+    width: 20px !important
+    background-image: image-url('icons/window-dots.png') !important
+    background-position: 0px 1px !important
+  .Ha
+    background-position: -42px 1px !important
+  .Hl
+    background-position: -21px 1px !important
+  .Hq.Hr
+    background-position: 0px -19px !important
+  .Hl.Hn
+    background-position: -21px -19px !important
+  .Ha.Hb
+    background-position: -42px -19px !important
+.Hy .m, .Hy .pi, .Hy .n, .Hy .k, .Hy .o, .Hy .p, .Hy .q
+  background: transparent !important
+  // -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C4C4C4), to(#979797)) !important

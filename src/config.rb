@@ -6,10 +6,10 @@
 # Set this to the root of your project when deployed:
 http_path = "/"
 
-css_dir = "Gmail Snow Leopard.safariextension"
+css_dir = "../Gmail Snow Leopard.safariextension"
 sass_dir = ""
 # fonts_dir = "media/fonts"
-images_dir = "Gmail Snow Leopard.safariextension/images"
+images_dir = "../Gmail Snow Leopard.safariextension/images"
 # javascripts_dir = "media/js"
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
@@ -21,5 +21,5 @@ preferred_syntax = :sass
 line_comments = false
 
 # The output style for the compiled css. One of: :nested, :expanded, :compact, or :compressed.
-output_style = :nested
+output_style = :compact
 # output_style = :compressed

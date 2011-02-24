@@ -1,0 +1,208 @@
+
+
+// Sidebar
+.cP > div > .nH > .nH > .nH > .no
+  // margin-top: 27px !important
+  // z-index: 99
+  position: absolute
+  // float: none !important
+  top: 29px
+  width: 100%
+  bottom: 0
+  // outline: 2px solid red
+  z-index: 1 !important
+  & > .nH.nn:first-child
+    border-right: 1px solid hsl(0, 0%, 55%)
+    width: 190px !important
+    background-color: hsl(210, 27%, 87%)
+    position: fixed
+    top: 27px
+    padding-top: 3px
+    left: 0px
+    bottom: 0px
+    z-index: 1 !important
+    overflow: auto
+
+// Sidebar contents
+.nH.CX.pp
+  .z9
+    // Mail
+    margin: 2px 0 !important
+    padding-left: 0px !important
+    .is
+      padding-left: 43px !important
+      background: transparent image-url('icons/gmail.png') no-repeat 23px 0px
+    &:last-child .is
+      // Contacts
+      background-image: image-url('icons/contacts.png')
+  .z8
+    background: transparent image-url('sidebar-selected-gradient.png') repeat-x center center !important
+    color: white !important
+
+.T4 .T3, .T4 .T1
+  // Tasks
+  margin: 2px 0 !important
+  padding-left: 43px !important
+  background: transparent image-url('icons/tasks.png') no-repeat 23px 2px !important
+
+
+// Standart items
+.LrBjie
+  // +debug(green)
+  .TO
+    // +debug(blue)
+    &.nZ
+      background: transparent image-url('sidebar-selected-gradient.png') repeat-x center center !important
+      a
+        color: white !important
+    .TN
+      // +debug
+  .J-Ke.n0
+    padding-left: 22px
+    background: transparent image-url('icons/inbox.png') no-repeat 0 center
+    margin-left: -2px
+    &[href*='#all']
+      background-image: image-url('icons/inbox-full-alt.png')
+    &[href*='#mbox']
+      background-image: image-url('icons/inbox-important.png')
+    &[href*='#buzz']
+      background-image: image-url('icons/buzz-alt.png')
+    &[href*='#starred']
+      background-image: image-url('icons/starred.png')
+    &[href*='#imp']
+      background-image: image-url('icons/exclamation.png')
+    &[href*='#chats']
+      background-image: image-url('icons/chats-alt.png')
+    &[href*='#sent']
+      background-image: image-url('icons/sent.png')
+    &[href*='#drafts']
+      background-image: image-url('icons/drafts.png')
+    &[href*='#spam']
+      background-image: image-url('icons/spam.png')
+    &[href*='#trash']
+      background-image: image-url('icons/trash.png')
+  .n1
+    & [href*='#inbox']
+      background-image: image-url('icons/inbox-full.png') !important
+    & [href*='#mbox']
+      background-image: image-url('icons/inbox-important-full.png') !important
+  img[src*='cleardot']
+    +hide
+
+// Sidebar Heading seperators
+.T0, .TZ
+  border-top-color: hsla(0, 0%, 0%, .2) !important
+  +box-shadow(inset, 0, 1px, 0, hsla(0, 0%, 100%, .6))
+.T4
+  border-bottom-color: hsla(0, 0%, 0%, .2) !important
+  +box-shadow(hsla(0, 0%, 100%, .6), 0, 1px, 0)
+
+// Sidebar Contacts
+.nM > .n3
+  margin-bottom: 10px
+  .nZ .TN
+    background: transparent image-url('sidebar-selected-gradient.png') repeat-x center center !important
+    a
+      color: white !important
+  [href*='#contacts']
+    padding-left: 20px
+    margin-left: -2px
+    background: transparent image-url('icons/adb-group.png') no-repeat 0 -1px
+  > div:first-child
+    [href*='#contacts']
+      background-image: image-url('icons/adb.png')
+  // > div:nth-child(2)
+    [href*='#contacts']
+      // background-image: image-url('icons/adb-group.png')
+  > div:nth-child(4)
+    [href*='#contacts']
+      background-image: image-url('icons/adb-smartgroup.png')
+  > div:nth-child(6), div:nth-child(7)
+    .CK
+      padding-left: 20px
+      margin-left: -2px
+      background: transparent image-url('icons/adb-import.png') no-repeat 0 -1px
+
+// Sublink background-color
+.pU
+  background: transparent !important
+
+// Collapse icons
+.pp .pr .pq
+  background: transparent image-url('miniplus.png') no-repeat center center !important
+  &:active
+    background-image: image-url('miniplusactive.png') !important
+.pp .pv .pq
+  background: transparent image-url('miniminus.png') no-repeat center center !important
+  &:active
+    background-image: image-url('miniminusactive.png') !important
+
+// Add-button bar
+
+// .nH.pp .n3
+  padding-bottom: 30px
+
+// .nH.pp
+  position: relative
+  margin-bottom: 0px !important
+  .nH.MX, .z0
+    border-top: 1px solid hsl(220, 23%, 85%)
+    background: white image-url('whitebg.png') repeat-x left top
+    -webkit-box-shadow: inset 0 1px 0 white
+    height: 22px
+    padding: 0 !important
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    [role='button']
+      height: 23px !important
+      width: 28px !important
+      padding: 0 !important
+      margin: 0 !important
+      overflow: hidden !important
+      text-indent: -9999999px
+      border: 0 !important
+      border-right: 1px solid hsl(220, 23%, 85%) !important
+      background: transparent image-url('AddsubscriptionButton.png') no-repeat center center !important
+      -webkit-box-shadow: inset 1px 0 0 white
+      -webkit-border-radius: 0 !important
+      border-radius: 0 !important
+      z-index: 1
+      &:hover
+        cursor: pointer !important
+      &:active
+        background-image: image-url("AddsubscriptionButtonActive.png") !important
+
+.pp .pw
+  color: hsl(215, 12%, 50%) !important
+  text-shadow: 0 1px 0 white
+
+// Sidebar contents
+// .cP > div > .nH > .nH > .nH > .no
+  & > .nH.nn:first-child
+    & > .nH .z9
+      // Mail
+      margin: 2px 0 !important
+      padding-left: 0px !important
+      & > span.is
+        padding-left: 43px !important
+        background: transparent image-url('icons/gmail.png') no-repeat 23px 0px
+        // outline: 1px solid red
+        // margin: 0 !important
+        // line-height: 22px !important
+    & > .nH .z9:last-child
+      & > span.is
+        background-image: image-url('icons/contacts.png')
+    & > .nH .z9.z8
+      background: transparent image-url('sidebar-selected-gradient.png') repeat-x center center !important
+      color: white !important
+    & > .nH .T4
+      padding-left: 0px !important
+      & .T3
+        margin: 2px 0 !important
+        padding-left: 43px !important
+        background: transparent image-url('icons/tasks.png') no-repeat 23px 2px !important
+        &:hover
+          background-color: #EEF2FF !important

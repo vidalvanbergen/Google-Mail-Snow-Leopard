@@ -1,0 +1,132 @@
+/* ==UserScript==
+/* @name           Gmail: Mac OS X Snow Leopard
+/* @namespace      http://userstyles.org
+/* @description    Gmail powered by Mac OS X.
+/* @author         Vidal van Bergen.
+/* @homepage       http://mariusth.channelwood.org/SafariExtensions/
+/* @include        https://mail.google.com/mail*
+/* @include        http://mail.google.com/mail*
+
+@import                               "compass"
+@import                               "mixins"
+
+/* Loading Screen
+@import "loading_screen"
+/* Header
+@import "header"
+/* Sidebar
+@import "sidebar"
+/* Section
+@import "section"
+/* Mail
+@import "mail"
+/* Contacts
+@import "contacts"
+/* Popup Windows
+@import "popup_windows"
+/* Settings
+@import "settings"
+/* Footer
+@import "footer"
+
+/* Misc
+
+// Mailbox
+.ya
+  background-color: #FF8 !important
+.F
+  .xY, .MT td, .x7 td
+    border-bottom: 0px none !important
+  tr:nth-child(2n+1)
+    td
+      background-color: hsl(220, 90%, 96%) !important
+  tr:nth-child(2n)
+    td
+      background-color: hsl(0, 0%, 100%) !important
+  .EqK8f
+    background: transparent image-url('icons/starred-empty.png') no-repeat center center !important
+  .W5RYx
+    background: transparent image-url('icons/starred.png') no-repeat center center !important
+  .MQ
+    span
+      // +debug
+      padding-left: 22px
+      background: transparent image-url('icons/adb-card.png') no-repeat left center
+      &[email*="vidal"], &[email*="MariusTh86"]
+        background-image: image-url('icons/adb-me.png')
+
+// Floating mail message
+.yo
+  // border: 2px solid white !important
+  +border-radius(5px)
+  table:first-child
+    +border-top-radius(5px)
+  table:last-child
+    +border-top-radius(0)
+    +border-bottom-radius(5px)
+  .yz
+    +modal_window_header
+    +border-top-radius(0)
+    .yw
+      color: white !important
+    .VP5otc-HT6HAf.J-J5-Ji
+      margin-left: 10px
+      [role='button']
+        +modal_button
+        border-right: none !important
+        &:last-child
+          border-right: 1px solid black !important
+    .Wx
+      // Next / Previous arrow buttons
+      div:first-child, div:nth-child(2)
+        border: 1px solid black !important
+        background: none !important
+        padding: 0px 5px 2px !important
+        margin: 0 !important
+        color: white !important
+        text-shadow: -1px -1px 0 black
+        font-weight: normal !important
+        -webkit-box-shadow: 0 1px 0 hsla(0, 0%, 100%, .3), inset 0 1px 0 hsla(0, 0%, 100%, .1)
+        +linear-gradient( color-stops( hsl(0, 0%, 52%), hsl(0, 0%, 30%) 50%, hsl(0, 0%, 23%) 50%, hsl(260, 2%, 26%)) )
+        text-decoration: none !important
+        font-family: "Lucida Grande", Lucida, "Helvetica Neue", Helvetica, Arial, sans-serif !important
+        font-size: 11px !important
+        cursor: pointer !important
+        &:hover
+          +linear-gradient( color-stops( lighten(hsl(0, 0%, 52%), 10%), lighten(hsl(0, 0%, 30%), 10%) 50%, lighten(hsl(0, 0%, 23%), 10%) 50%, lighten(hsl(260, 2%, 26%), 10%) ), top )
+        &:active
+          +linear-gradient( color-stops( darken(hsl(0, 0%, 52%), 10%), darken(hsl(0, 0%, 30%), 10%) 50%, darken(hsl(0, 0%, 23%), 10%) 50%, darken(hsl(260, 2%, 26%), 10%) ), top )
+          outline: none
+      div:first-child
+        +border-right-radius(3px)
+      div:nth-child(2)
+        border-right: none !important
+        +border-left-radius(3px)
+    .Wv
+      // Close button
+      position: absolute
+      top: -12px
+      right: -12px
+      background: transparent image-url("closebox.png") no-repeat center center !important
+      height: 30px !important
+      width: 30px !important
+      border: none !important
+      &:active
+        background-image: image-url('closebox_pressed.png') !important
+  .ys
+    background-color: transparent !important
+  .SK
+    padding: 0 !important
+    // border: 2px solid white !important
+    +border-radius(5px)
+
+  .yx
+    background-color: hsla(0, 0%, 0%, .8) !important
+    .yu
+      color: hsla(0, 0%, 100%, .8) !important
+      &:hover
+        border-bottom: 1px solid
+
+
+
+
