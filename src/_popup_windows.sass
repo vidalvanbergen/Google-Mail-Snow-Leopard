@@ -197,3 +197,37 @@
 .Hy .m, .Hy .pi, .Hy .n, .Hy .k, .Hy .o, .Hy .p, .Hy .q
   background: transparent !important
   // -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C4C4C4), to(#979797)) !important
+
+// Lightbox popup
+.Kj-JD-Jh
+  background-color: black !important
+  opacity: .4 !important
+  border: 0 none !important
+.Kj-JD
+  padding: 0 !important
+  +border-radius(5px)
+  background-color: $modal_dialog-bg !important
+  +box-shadow(hsla(0, 0%, 0%, .3), 0, 3px, 14px)
+  .Kj-JD-Jz
+    // background: transparent !important
+  .Kj-JD-K7
+    padding: 5px 15px !important
+    text-align: center
+  .Kj-JD-K7.Kj-JD-K7-GIHV4
+    // window header
+    +metal_window_header
+    // font-weight: normal !important
+    text-shadow: 0 1px 0 hsla(0, 0%, 100%, .85)
+    font-size: 13px !important
+    font-family: "Lucida Grande", Lucida, "Helvetica Neue", Helvetica, Arial, sans-serif !important
+  .Kj-JD-K7-Jq
+    // close button
+    right: auto !important
+    left: 10px !important
+    top: 3px !important
+    background: transparent image-url('icons/window-dots.png') no-repeat -45px -1px !important
+    border: 0 none !important
+    &:hover
+      background: transparent image-url('icons/window-dots.png') no-repeat -45px -21px !important
+  button
+    padding: 3px 8px !important
